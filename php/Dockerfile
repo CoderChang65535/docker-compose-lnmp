@@ -62,11 +62,6 @@ RUN set -x \
   && make \
   && make install \
 
-# copy conf
-  && cp ~/download/php-$PHP_VERSION/php.ini-production /usr/local/php/etc/php.ini \
-  && cp /usr/local/php/etc/php-fpm.conf.default /usr/local/php/etc/php-fpm.conf \
-  && cp /usr/local/php/etc/php-fpm.d/www.conf.default /usr/local/php/etc/php-fpm.d/www.conf \
-
 # add env
   && echo "export PATH=/usr/local/php/bin:/usr/local/php/sbin:$PATH" >> ~/.bashrc \
   && source ~/.bashrc \
